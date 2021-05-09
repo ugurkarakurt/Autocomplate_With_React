@@ -1,0 +1,136 @@
+@import url("./lightSabersColors.css");
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: 0;
+}
+
+body {
+    background-color: #222831;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    .wrapper {
+        height: 100%;
+        width: 100%;
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                height: 250px;
+            }
+        }
+        .search {
+            animation: boxLightSaberYellow 2s linear infinite;
+            border-radius: 5px;
+            width: 500px;
+            margin: 20px auto;
+            position: relative;
+            .input-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #eee;
+                width: 100%;
+                height: 50px;
+                border-radius: 5px;
+                padding: 5px;
+
+                input {
+                    background-color: transparent;
+                    width: 95%;
+                    height: 100%;
+                    color: #222831;
+                    font-size: 20px;
+                    &::placeholder {
+                        color: #393e46;
+                    }
+                }
+                input.typing {
+                    border-bottom: 1px solid #ffd369;
+                }
+            }
+            .inpTyping {
+                border-radius: 5px 5px 0 0;
+            }
+            .search-result {
+                scrollbar-width: none;
+                &::-webkit-scrollbar {
+                    width: 0px !important;
+                }
+                position: relative;
+                left: 0;
+                width: 100%;
+                border-radius: 0 0 5px 5px;
+                background-color: #eee;
+                max-height: 300px;
+                overflow: auto;
+            }
+            .search-result .search-result-item {
+                cursor: pointer;
+                padding: 10px 15px;
+                &:hover {
+                    transition: all 0.3s ease;
+                    background-color: #ffd2698e;
+                }
+            }
+            .result-not-found {
+                padding: 25px;
+                text-emphasis: center;
+                font-size: 16px;
+                color: rgba(0, 0, 0, 0.582);
+            }
+            #current {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 20px;
+                position: relative;
+                left: 0;
+                width: 100%;
+                border-radius: 0 0 5px 5px;
+                background-color: #eee;
+                height: 80px;
+                table {
+                    width: 100%;
+                    tbody {
+                        tr {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            td {
+                                color: #393e46;
+                                text-transform: uppercase;
+                                flex: 1 1;
+                                text-align: center;
+                                border-left: 1px solid #393e4691;
+                                &:first-child {
+                                    text-align: start;
+                                    flex: 1.5 1;
+                                    border: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
